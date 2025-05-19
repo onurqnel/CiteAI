@@ -79,16 +79,16 @@ const Footer = () => {
 
       <div className="mx-auto max-w-7xl px-6 py-12 flex flex-col items-center justify-center gap-y-6 lg:px-8">
         <div className="flex items-center gap-x-8">
-          <p className="text-lg text-gray-600 font-medium">
+          <p className="text-lg text-gray-700 font-medium">
             &copy; 2025 Onur Onel
           </p>
           {navigation.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="flex items-center gap-3 text-gray-600 hover:text-gray-800 text-base font-semibold"
+              className="flex items-center gap-3 text-gray-600 hover:text-black text-base font-semibold"
             >
-              <item.icon className="size-7" aria-hidden="true" />
+              <item.icon className="size-8" aria-hidden="true" />
               <span>{item.name}</span>
             </a>
           ))}
