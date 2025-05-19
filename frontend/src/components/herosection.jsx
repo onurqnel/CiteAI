@@ -8,7 +8,7 @@ export default function HeroSection() {
       <div className="py-12 lg:pb-18">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h1 className="mt-12 text-9xl text-gray-900">CiteAI</h1>
+            <h1 className="mt-12 text-9xl text-black">CiteAI</h1>
 
             <p className="mt-12 text-2xl font-medium text-pretty text-gray-600 flex items-center justify-center gap-2">
               Powered by OpenAI&nbsp;API
