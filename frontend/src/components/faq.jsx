@@ -36,7 +36,7 @@ const Faq = () => {
             FAQs
           </h2>
 
-          <dl className="mt-24 divide-y divide-gray-900/10">
+          <dl className="mt-18 divide-y divide-gray-900/10">
             {faqs.map((faq) => (
               <Disclosure
                 key={faq.question}
