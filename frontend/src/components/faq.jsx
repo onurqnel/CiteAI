@@ -31,7 +31,7 @@ const faqs = [
 export default function Faq() {
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-5xl px-6 py-36 mb-24">
+      <div className="mx-auto max-w-5xl px-6 py-24 mb-24">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-center text-5xl font-medium tracking-tight text-black">
             FAQs
