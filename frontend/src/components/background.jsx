@@ -1,6 +1,4 @@
-"use client";
-
-export default function Background() {
+const Background = () => {
   return (
     <>
       <div
@@ -34,7 +32,6 @@ export default function Background() {
       >
         <div
           style={{
-            /* Daha parçalı, dağınık siluet */
             clipPath:
               "polygon(10% 20%, 35% 5%, 30% 15%, 80% 0%, 100% 25%, 95% 50%, 100% 75%, 75% 100%, 40% 90%, 15% 100%, 0% 70%, 5% 40%)",
           }}
@@ -43,4 +40,6 @@ export default function Background() {
       </div>
     </>
   );
-}
+};
+
+export default Background;

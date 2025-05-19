@@ -1,4 +1,4 @@
-export default function Banner() {
+const Banner = () => {
   return (
     <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-8 py-4 sm:px-6 sm:before:flex-1">
       <div
@@ -27,4 +27,6 @@ export default function Banner() {
       </div>
     </div>
   );
-}
+};
+
+export default Banner;

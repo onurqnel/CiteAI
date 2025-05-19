@@ -1,10 +1,8 @@
-# Byte‑compiled / DLLs
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
-
-# Packaging / build
 .Python
 build/
 dist/
@@ -18,14 +16,12 @@ develop-eggs/
 MANIFEST
 sdist/
 var/
-lib*/          
+lib*/
 parts/
-
-# PyInstaller
 *.manifest
 *.spec
 
-# Virtual‑envs & environment managers
+# Python virtual environments
 .env
 .venv
 env/
@@ -38,11 +34,11 @@ venv.bak/
 .pdm-build/
 __pypackages__/
 
-# Test / coverage
+# Python testing and coverage
 htmlcov/
 .coverage
 .coverage.*
-.cache         
+.cache
 .pytest_cache/
 .nox/
 .tox/
@@ -54,10 +50,10 @@ dmypy.json
 .hypothesis/
 .cover/
 
-# Linters / formatters
+# Python linters / formatters
 .ruff_cache/
 
-# Notebook & IPython
+# Jupyter Notebook & IPython
 .ipynb_checkpoints/
 profile_default/
 ipython_config.py
@@ -68,28 +64,16 @@ local_settings.py
 instance/
 .webassets-cache
 db.sqlite3*
-# Celery
 celerybeat-schedule
 celerybeat.pid
 
-# Dependency directories
+# Node.js
 node_modules/
 .pnpm-store/
 .npm/
+.nvmrc
 
-# Vite build & cache
-dist/           
-dist-ssr/
-.vite/
-coverage/      
-.eslintcache
-
-# Local env & host overrides
-.env.*
-!.env.example         
-*.local
-
-# Log files
+# npm / Yarn / pnpm logs
 logs/
 *.log
 npm-debug.log*
@@ -98,14 +82,27 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# VS Code
+# Vite
+dist/
+dist-ssr/
+.vite/
+
+# React / TailwindCSS
+.next/
+out/
+.cache/
+.eslintcache
+.stylelintcache
+
+# Local env files
+.env.*
+!.env.example
+*.local
+
+# IDEs / Editors
 .vscode/*
-!.vscode/extensions.json   
-
-# JetBrains IDEs
+!.vscode/extensions.json
 .idea/
-
-# Misc editors
 *.suo
 *.ntvs*
 *.njsproj
@@ -115,11 +112,16 @@ lerna-debug.log*
 .spyderproject
 .spyproject
 
-# macOS / Windows
+# OS
 .DS_Store
 Thumbs.db
 
+# Documentation
 docs/_build/
-.pybuilder/
 target/
 site/
+
+# Lock files (optional, depending on your team)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml

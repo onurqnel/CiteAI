@@ -1,5 +1,5 @@
 import Footer from "./components/footer";
-import HeroSection from "./components/herosection";
+import Hero from "./components/hero";
 import Faq from "./components/faq"
 import Banner from "./components/banner";
 import Background from "./components/background";
@@ -9,7 +9,7 @@ function App() {
     <>
       <Banner />
       <Background />
-      <HeroSection />
+      <Hero />
       <Faq />
       <Footer />
     </>

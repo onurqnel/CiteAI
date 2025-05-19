@@ -3,32 +3,31 @@ import {
   DisclosureButton,
   DisclosurePanel,
 } from "@headlessui/react";
-import { MinusSmallIcon, PlusSmallIcon } from "@heroicons/react/24/outline";
+import { PlusIcon, MinusIcon } from "@heroicons/react/24/solid";
 
-const faqs = [
-  {
-    question: "What's the best thing about Switzerland?",
-    answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-  },
-  {
-    question: "What's the best thing about Switzerland?",
-    answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-  },
-  {
-    question: "What's the best thing about Switzerland?",
-    answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-  },
-  {
-    question: "What's the best thing about Switzerland?",
-    answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-  },
-];
-
-export default function Faq() {
+const Faq = () => {
+  const faqs = [
+    {
+      question: "What's the best thing about Switzerland?",
+      answer:
+        "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+    },
+    {
+      question: "What's the best thing about Switzerland?",
+      answer:
+        "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+    },
+    {
+      question: "What's the best thing about Switzerland?",
+      answer:
+        "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+    },
+    {
+      question: "What's the best thing about Switzerland?",
+      answer:
+        "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+    },
+  ];
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-5xl px-6 py-24 mb-24">
@@ -50,11 +49,11 @@ export default function Faq() {
                       {faq.question}
                     </span>
                     <span className="ml-6 flex h-7 items-center">
-                      <PlusSmallIcon
+                      <PlusIcon
                         aria-hidden="true"
                         className="size-6 group-data-open:hidden"
                       />
-                      <MinusSmallIcon
+                      <MinusIcon
                         aria-hidden="true"
                         className="size-6 group-not-data-open:hidden"
                       />
@@ -71,4 +70,6 @@ export default function Faq() {
       </div>
     </div>
   );
-}
+};
+
+export default Faq;
