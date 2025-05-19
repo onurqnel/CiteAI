@@ -1,7 +1,7 @@
-import Header from "./hero-section/header";
-import Button from "./hero-section/button";
-import Logo from "./hero-section/logo";
-import Image from "./hero-section/image";
+import Header from "./hero-section/Header";
+import Button from "./hero-section/Button";
+import Logo from "./hero-section/Logo";
+import Image from "./hero-section/Image";
 
 const Hero = () => {
   return (

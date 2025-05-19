@@ -1,18 +1,30 @@
-import Footer from "./components/footer";
-import Hero from "./components/hero";
-import Faq from "./components/faq"
-import Banner from "./components/banner";
-import Background from "./components/background";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Footer from "./components/Footer";
+import Hero from "./components/Hero";
+import Faq from "./components/Faq";
+import Banner from "./components/Banner";
+import Background from "./components/Background";
+import Cite from "./citation-section/Cite"
 
 function App() {
   return (
-    <>
-      <Banner />
-      <Background />
-      <Hero />
-      <Faq />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Banner />
+              <Background />
+              <Hero />
+              <Faq />
+              <Footer />
+            </>
+          }
+        />
+        <Route path="/cite" element={<Cite />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
