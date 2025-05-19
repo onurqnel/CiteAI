@@ -2,14 +2,14 @@ import Footer from "./components/footer";
 import HeroSection from "./components/herosection";
 import Faq from "./components/faq"
 import Banner from "./components/banner";
-import Logo from "./components/logo";
+import Background from "./components/background";
 
 function App() {
   return (
     <>
       <Banner />
+      <Background />
       <HeroSection />
-      <Logo />
       <Faq />
       <Footer />
     </>
