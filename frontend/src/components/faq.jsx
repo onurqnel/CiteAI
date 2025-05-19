@@ -45,7 +45,7 @@ const Faq = () => {
               >
                 <dt>
                   <DisclosureButton className="group flex w-full items-start justify-between text-left text-gray-900">
-                    <span className="text-base/7 font-semibold">
+                    <span className="text-xl font-semibold leading-7">
                       {faq.question}
                     </span>
                     <span className="ml-6 flex h-7 items-center">
@@ -60,8 +60,10 @@ const Faq = () => {
                     </span>
                   </DisclosureButton>
                 </dt>
-                <DisclosurePanel as="dd" className="mt-2 pr-12">
-                  <p className="text-base/7 text-gray-600">{faq.answer}</p>
+                <DisclosurePanel as="dd" className="mt-3 pr-12">
+                  <p className="text-lg leading-7 text-gray-600">
+                    {faq.answer}
+                  </p>
                 </DisclosurePanel>
               </Disclosure>
             ))}
