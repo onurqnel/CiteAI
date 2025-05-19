@@ -1,12 +1,19 @@
-function App() {
+import Footer from "./components/footer";
+import HeroSection from "./components/herosection";
+import Faq from "./components/faq"
+import Banner from "./components/banner";
+import Logo from "./components/logo";
 
+function App() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-        <h1 className="text-4xl font-bold mb-4">Welcome to the Frontend</h1>
-      </div>
+      <Banner />
+      <HeroSection />
+      <Logo />
+      <Faq />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
