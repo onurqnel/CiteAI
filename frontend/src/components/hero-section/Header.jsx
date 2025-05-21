@@ -5,7 +5,7 @@ const Header = () => {
 
       <p className="mt-2 text-3xl font-medium text-pretty text-gray-600 flex items-center justify-center gap-2">
         Powered by OpenAI API
-        <img src="/openai.png" alt="OpenAI Logo" className="h-10 w-10" />
+        <img src="/openai.png" alt="OpenAI Logo" className="h-9 w-9" />
       </p>
     </div>
   );
