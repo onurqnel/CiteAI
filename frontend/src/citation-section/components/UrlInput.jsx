@@ -1,5 +1,3 @@
-"use client";
-
 import { ExclamationCircleIcon } from "@heroicons/react/20/solid";
 
 const UrlInput = ({ value, error, errorMsg, onChange }) => {

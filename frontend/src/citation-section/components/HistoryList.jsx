@@ -1,4 +1,3 @@
-"use client";
 
 import { ClipboardIcon } from "@heroicons/react/24/outline"; 
 
