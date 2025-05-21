@@ -1,6 +1,6 @@
 "use client";
 
-import { ClipboardIcon } from "@heroicons/react/24/outline"; // Use outline for a cleaner look
+import { ClipboardIcon } from "@heroicons/react/24/outline"; 
 
 const HistoryList = ({ history, onCopy }) => {
   return (

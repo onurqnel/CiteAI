@@ -5,12 +5,10 @@ export default function Cite() {
   return (
     <>
       <Background />
-      <section className="relative z-10 pt-14">
-        <div className="py-12 lg:pb-18">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="relative z-10 pt-36">
+          <div className="mx-auto max-w-5xl px-6 lg:px-8">
             <UrlManager />
           </div>
-        </div>
       </section>
     </>
   );

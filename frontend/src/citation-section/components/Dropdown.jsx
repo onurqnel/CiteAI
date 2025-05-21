@@ -14,7 +14,8 @@ const Dropdown = () => {
   const publishingOptions = [
     {
       title: "APA",
-      description: "Used in social sciences, emphasizes author-date citation format.",
+      description:
+        "Used in social sciences, emphasizes author-date citation format.",
       current: true,
     },
     {
@@ -34,23 +35,23 @@ const Dropdown = () => {
     },
     {
       title: "Harvard",
-      description: "A general author-date citation style widely used in academia.",
+      description:
+        "A general author-date citation style widely used in academia.",
       current: false,
     },
   ];
   const [selected, setSelected] = useState(publishingOptions[0]);
 
   return (
-    //rounded-md bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900
     <Listbox value={selected} onChange={setSelected}>
       <Label className="sr-only">Change published status</Label>
       <div className="relative">
-        <div className="inline-flex divide-x divide-indigo-700 rounded-md outline-hidden">
-          <div className="inline-flex items-center gap-x-1.5 rounded-l-md bg-gray-900 px-3 py-2 text-white">
+        <div className="inline-flex divide-x rounded-md outline-hidden">
+          <div className="inline-flex items-center gap-x-1 rounded-l-md bg-gray-900 px-2 py-1.5 text-white">
             <CheckIcon aria-hidden="true" className="-ml-0.5 size-5" />
-            <p className="text-sm font-semibold">{selected.title}</p>
+            <p className="text-lg font-medium">{selected.title}</p>
           </div>
-          <ListboxButton className="inline-flex items-center rounded-l-none rounded-r-md bg-gray-900 p-2 outline-hidden hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-400">
+          <ListboxButton className="inline-flex items-center  rounded-r-md bg-gray-900 p-1 outline-hidden hover:bg-indigo-500">
             <span className="sr-only">Change published status</span>
             <ChevronDownIcon
               aria-hidden="true"
@@ -67,7 +68,7 @@ const Dropdown = () => {
             <ListboxOption
               key={option.title}
               value={option}
-              className="group cursor-default p-4 text-sm text-gray-900 select-none data-focus:bg-indigo-600 data-focus:text-white"
+              className="group cursor-default p-4 text-sm text-gray-900 select-none data-focus:bg-indigo-500 data-focus:text-white"
             >
               <div className="flex flex-col">
                 <div className="flex justify-between">
@@ -78,7 +79,7 @@ const Dropdown = () => {
                     <CheckIcon aria-hidden="true" className="size-5" />
                   </span>
                 </div>
-                <p className="mt-2 text-gray-500 group-data-focus:text-indigo-200">
+                <p className="mt-2 text-gray-500 group-data-focus:text-white">
                   {option.description}
                 </p>
               </div>
