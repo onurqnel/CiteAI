@@ -10,20 +10,19 @@ import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
 const Dropdown = ({ options, selected, onChange }) => {
   return (
     <Listbox value={selected} onChange={onChange}>
-      <Label className="sr-only">Select citation style</Label>
       <div className="relative">
         <div className="inline-flex divide-x rounded-md">
-          <div className="inline-flex items-center gap-x-1 rounded-l-md bg-gray-900 px-2 py-1.5 text-white">
+          <div className="inline-flex items-center rounded-l-md bg-gray-900 px-3 py-1.5 text-white">
             <span className="text-lg font-medium">{selected.title}</span>
           </div>
-          <ListboxButton className="inline-flex items-center rounded-r-md bg-gray-900 p-1 hover:bg-indigo-500">
+          <ListboxButton className="inline-flex items-center rounded-r-md bg-gray-900 p-1 hover:bg-indigo-600">
             <ChevronDownIcon
               className="h-5 w-5 text-white"
               aria-hidden="true"
             />
           </ListboxButton>
         </div>
-        <ListboxOptions className="absolute right-0 z-10 mt-2 w-72 divide-y divide-gray-200 overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-black/5">
+        <ListboxOptions className="absolute right-0 mt-3 w-72 divide-y divide-gray-300 overflow-hidden rounded-md bg-white shadow-lg ring-0 focus:ring-0 focus:outline-none">
           {options.map((option) => (
             <ListboxOption
               key={option.title}
