@@ -1,17 +1,31 @@
-"use client";
-
 import { useState } from "react";
-import PublishingStatusSelect from "./Dropdown";
+import Dropdown from "./Dropdown";
 import UrlInput from "./UrlInput";
 import HistoryList from "./HistoryList";
+import Button from "./Button";
 
 const UrlManager = () => {
   const [history, setHistory] = useState([
     { id: 1, name: "APA", avatar: "/apa.png", url: "https://example.com/apa" },
     { id: 2, name: "MLA", avatar: "/mla.png", url: "https://example.com/mla" },
-    { id: 3, name: "IEEE", avatar: "/ieee.png", url: "https://example.com/ieee" },
-    { id: 4, name: "Chicago", avatar: "/chicago.png", url: "https://example.com/chicago" },
-    { id: 5, name: "Harvard", avatar: "/harvard.png", url: "https://example.com/harvard" },
+    {
+      id: 3,
+      name: "IEEE",
+      avatar: "/ieee.png",
+      url: "https://example.com/ieee",
+    },
+    {
+      id: 4,
+      name: "Chicago",
+      avatar: "/chicago.png",
+      url: "https://example.com/chicago",
+    },
+    {
+      id: 5,
+      name: "Harvard",
+      avatar: "/harvard.png",
+      url: "https://example.com/harvard",
+    },
   ]);
 
   const [value, setValue] = useState("");
@@ -66,17 +80,11 @@ const UrlManager = () => {
           onChange={handleChange}
         />
 
-        <div className="mt-4 flex items-center justify-between">
-          <button
-            type="submit"
-            className="rounded-md bg-gray-900 px-2 py-1.5 text-lg font-medium text-white hover:bg-indigo-500"
-          >
-            Submit
-          </button>
-          <PublishingStatusSelect />
+        <div className="mt-4 flex justify-between">
+          <Button />
+          <Dropdown />
         </div>
       </form>
-
       <HistoryList history={history} onCopy={handleCopy} />
     </>
   );
