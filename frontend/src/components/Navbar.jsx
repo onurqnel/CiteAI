@@ -2,15 +2,13 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid";
 
-// Define your navigation items somewhere above or import them
-const navigation = [
-  { name: "Pricing", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "FAQs", href: "#" },
-  { name: "Contact", href: "#" },
-];
-
 const Navbar = () => {
+  const navigation = [
+    { name: "Features", href: "#" },
+    { name: "Pricing", href: "#" },
+    { name: "FAQs", href: "#" },
+    { name: "Contact", href: "#" },
+  ];
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (

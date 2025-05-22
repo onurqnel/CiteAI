@@ -30,11 +30,11 @@ const Faq = () => {
   ];
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-8xl px-6 py-12 mb-24">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="text-center text-5xl font-medium tracking-tight text-black">
+      <div className="mx-auto max-w-6xl px-6 py-12 mb-24">
+        <div className="mx-auto max-w-3xl">
+        <p className="text-center mt-2 text-5xl font-medium tracking-tight text-balance text-black ">
             FAQs
-          </h2>
+          </p>
 
           <dl className="mt-12 divide-y divide-gray-900/10">
             {faqs.map((faq) => (
