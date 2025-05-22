@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Faq from "./components/Faq";
-import Banner from "./components/Banner";
+import Navbar from "./components/Navbar";
 import Background from "./components/Background";
 import Cite from "./citation-section/Cite"
 
@@ -14,7 +14,7 @@ function App() {
           path="/"
           element={
             <>
-              <Banner />
+              <Navbar />
               <Background />
               <Hero />
               <Faq />

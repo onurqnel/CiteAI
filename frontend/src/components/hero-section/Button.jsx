@@ -8,13 +8,17 @@ const Button = () => {
   };
 
   return (
-    <div className="mt-8 flex items-center justify-center gap-x-8">
+    <div className="mt-10 flex items-center justify-center gap-x-6">
       <button
+        type="button"
         onClick={handleClick}
-        className="mt-12 flex items-center justify-center rounded-full bg-gray-900 px-4 py-2 text-2xl font-medium text-white shadow-lg transition hover:bg-indigo-600 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-300"
+        className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
       >
-        Get Started
+        Get started
       </button>
+      <a href="#" className="text-sm font-semibold text-gray-900">
+        Learn more <span aria-hidden="true">→</span>
+      </a>
     </div>
   );
 };
