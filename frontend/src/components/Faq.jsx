@@ -31,7 +31,7 @@ const Faq = () => {
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-6xl px-6 py-12 mb-24">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-4xl">
         <p className="text-center mt-2 text-5xl font-medium tracking-tight text-balance text-black ">
             FAQs
           </p>

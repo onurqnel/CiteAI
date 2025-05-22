@@ -1,7 +1,7 @@
 const Contact = () => {
   return (
-    <div className="isolate px-6 py-24 sm:py-32 lg:px-8">
-      <div className="mx-auto max-w-2xl text-center">
+    <div className="isolate px-6 py-8 mb-20">
+      <div className="mx-auto max-w-3xl text-center">
         <p className="text-center mt-2 text-5xl font-medium tracking-tight text-balance text-black">
           Contact
         </p>
@@ -9,7 +9,7 @@ const Contact = () => {
       <form
         action="#"
         method="POST"
-        className="mx-auto mt-16 max-w-xl sm:mt-20"
+        className="mx-auto mt-8 max-w-3xl"
       >
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
@@ -25,7 +25,7 @@ const Contact = () => {
                 name="first-name"
                 type="text"
                 autoComplete="given-name"
-                className="block w-full rounded-md px-3.5 py-2 text-base text-gray-900 bg-white outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                className="block w-full rounded-md px-4 py-2.5 text-base text-gray-900 bg-white outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
               />
             </div>
           </div>
@@ -42,7 +42,7 @@ const Contact = () => {
                 name="last-name"
                 type="text"
                 autoComplete="family-name"
-                className="block w-full rounded-md px-3.5 py-2 text-base text-gray-900 bg-white outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                className="block w-full rounded-md px-4 py-2.5 text-base text-gray-900 bg-white outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
               />
             </div>
           </div>
@@ -60,7 +60,7 @@ const Contact = () => {
                 name="email"
                 type="email"
                 autoComplete="email"
-                className="block w-full rounded-md px-3.5 py-2 text-base text-gray-900 bg-white outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                className="block w-full rounded-md px-4 py-2.5 text-base text-gray-900 bg-white outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
               />
             </div>
           </div>
@@ -75,8 +75,8 @@ const Contact = () => {
               <textarea
                 id="message"
                 name="message"
-                rows={4}
-                className="block w-full rounded-md px-3.5 py-2 text-base text-gray-900 bg-white outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+                rows={5}
+                className="block w-full rounded-md px-4 py-2.5 text-base text-gray-900 bg-white outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
               />
             </div>
           </div>
@@ -84,7 +84,7 @@ const Contact = () => {
         <div className="mt-10">
           <button
             type="submit"
-            className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="block w-full rounded-md bg-indigo-600 px-4 py-3 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             Let's talk
           </button>

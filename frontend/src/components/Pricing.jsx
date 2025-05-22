@@ -40,9 +40,9 @@ const Pricing = () => {
   }
 
   return (
-    <div className="relative isolate px-6 py-24 sm:py-32 lg:px-8">
+    <div className="relative isolate px-6 py-24">
       <div className="mx-auto max-w-4xl text-center">
-        <p className="mt-2 text-5xl font-medium tracking-tight text-balance text-gray-900 sm:text-6xl">
+        <p className="mt-2 text-5xl font-medium tracking-tight text-balance text-black ">
           Pricing
         </p>
       </div>
