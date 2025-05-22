@@ -40,14 +40,14 @@ const Pricing = () => {
   }
 
   return (
-    <div className="relative isolate px-6 py-24">
+    <div className="relative isolate px-6 py-20">
       <div className="mx-auto max-w-4xl text-center">
         <p className="mt-2 text-5xl font-medium tracking-tight text-balance text-black ">
           Pricing
         </p>
       </div>
 
-      <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2">
+      <div className="mx-auto mt-12 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2">
         {tiers.map((tier, tierIdx) => (
           <div
             key={tier.id}
