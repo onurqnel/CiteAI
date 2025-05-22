@@ -2,6 +2,7 @@ import Header from "./hero-section/Header";
 import Button from "./hero-section/Button";
 import Logo from "./hero-section/Logo";
 import Image from "./hero-section/Image";
+import Features from "./hero-section/Features";
 
 const Hero = () => {
   return (
@@ -10,8 +11,9 @@ const Hero = () => {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <Header />
           <Button />
-          <Logo />
           <Image />
+          <Logo />
+          <Features />
         </div>
       </div>
     </section>

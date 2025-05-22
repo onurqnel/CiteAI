@@ -8,7 +8,7 @@ const Button = () => {
   };
 
   return (
-    <div className="mt-10 flex items-center justify-center gap-x-6">
+    <div className="mt-18 flex items-center justify-center gap-x-6">
       <button
         type="button"
         onClick={handleClick}

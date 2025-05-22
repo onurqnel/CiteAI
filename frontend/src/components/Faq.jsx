@@ -30,18 +30,18 @@ const Faq = () => {
   ];
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-5xl px-6 py-24 mb-24">
-        <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-8xl px-6 py-12 mb-24">
+        <div className="mx-auto max-w-5xl">
           <h2 className="text-center text-5xl font-medium tracking-tight text-black">
             FAQs
           </h2>
 
-          <dl className="mt-18 divide-y divide-gray-900/10">
+          <dl className="mt-12 divide-y divide-gray-900/10">
             {faqs.map((faq) => (
               <Disclosure
                 key={faq.question}
                 as="div"
-                className="py-6 first:pt-0 last:pb-0"
+                className="py-12 first:pt-0 last:pb-0"
               >
                 <dt>
                   <DisclosureButton className="group flex w-full items-start justify-between text-left text-gray-900">

@@ -4,10 +4,10 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid";
 
 // Define your navigation items somewhere above or import them
 const navigation = [
-  { name: "Product", href: "#" },
+  { name: "Pricing", href: "#" },
   { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
+  { name: "FAQs", href: "#" },
+  { name: "Contact", href: "#" },
 ];
 
 const Navbar = () => {
