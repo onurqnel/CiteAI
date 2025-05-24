@@ -1,5 +1,4 @@
 import {
-  Label,
   Listbox,
   ListboxButton,
   ListboxOption,
