@@ -38,6 +38,18 @@ const Background = () => {
           className="relative aspect-square w-[30rem] -rotate-[16deg] bg-gradient-to-br from-[#ff80b5] via-[#d7a2ff] to-[#9089fc] opacity-15 sm:w-[40rem]"
         />
       </div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed left-[20%] bottom-[-12rem] z-0 overflow-hidden blur-[50px] sm:left-[18%] sm:bottom-[-20rem]"
+      >
+        <div
+          style={{
+            clipPath:
+              "polygon(15% 0%, 60% 5%, 85% 25%, 100% 65%, 80% 100%, 35% 95%, 10% 70%, 0% 30%)",
+          }}
+          className="relative aspect-[900/600] w-[48rem] -rotate-[12deg] bg-gradient-to-br from-[#ff80b5] via-[#c599ff] to-[#9089fc] opacity-25 sm:w-[50rem]"
+        />
+      </div>
     </>
   );
 };
