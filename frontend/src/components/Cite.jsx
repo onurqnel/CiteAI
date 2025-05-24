@@ -1,5 +1,5 @@
-import UrlManager from "./components/UrlManager";
-import Header from "./components/Header"
+import UrlManager from "./citation-section/UrlManager";
+import Header from "./citation-section/Header"
 
 
 export default function Cite() {

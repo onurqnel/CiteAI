@@ -1,20 +1,38 @@
-/* components/UrlManager.js */
 import { useState } from "react";
 import Dropdown from "./Dropdown";
-import UrlInput from "./UrlInput";
+import UrlInput from "./Input";
 import HistoryList from "./HistoryList";
-import Button from "./Button";
+import Button from "./SubmitButton";
 
 const publishingOptions = [
-  { title: "APA", description: "Used in social sciences, author-date format.", avatar: "/apa.png" },
-  { title: "MLA", description: "Common in humanities, author-page format.", avatar: "/mla.png" },
-  { title: "IEEE", description: "Engineering style, uses numbered brackets.", avatar: "/ieee.png" },
-  { title: "Chicago", description: "Humanities bibliography / sciences author-date.", avatar: "/chicago.png" },
-  { title: "Harvard", description: "General author-date style.", avatar: "/harvard.png" },
+  {
+    title: "APA",
+    description: "Used in social sciences, author-date format.",
+    avatar: "/apa.png",
+  },
+  {
+    title: "MLA",
+    description: "Common in humanities, author-page format.",
+    avatar: "/mla.png",
+  },
+  {
+    title: "IEEE",
+    description: "Engineering style, uses numbered brackets.",
+    avatar: "/ieee.png",
+  },
+  {
+    title: "Chicago",
+    description: "Humanities bibliography / sciences author-date.",
+    avatar: "/chicago.png",
+  },
+  {
+    title: "Harvard",
+    description: "General author-date style.",
+    avatar: "/harvard.png",
+  },
 ];
 
 const UrlManager = () => {
-  // Başlangıçta boş geçmiş listesi
   const [history, setHistory] = useState([]);
 
   const [value, setValue] = useState("");
@@ -44,7 +62,7 @@ const UrlManager = () => {
         id: prev.length + 1,
         name: trimmed,
         avatar: selected.avatar,
-        url: trimmed.includes('://') ? trimmed : `https://${trimmed}`,
+        url: trimmed.includes("://") ? trimmed : `https://${trimmed}`,
       },
     ]);
     setValue("");
