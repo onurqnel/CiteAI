@@ -12,22 +12,22 @@ const Dropdown = ({ options, selected, onChange }) => {
     <Listbox value={selected} onChange={onChange}>
       <div className="relative">
         <div className="inline-flex divide-x rounded-md">
-          <div className="inline-flex items-center rounded-l-md bg-gray-900 px-3 py-1.5 text-white">
-            <span className="text-lg font-medium">{selected.title}</span>
+          <div className="inline-flex items-center rounded-l-md bg-indigo-600 px-3 py-1.5 text-white">
+            <span className="text-sm font-semibold">{selected.title}</span>
           </div>
-          <ListboxButton className="inline-flex items-center rounded-r-md bg-gray-900 p-1 hover:bg-indigo-600">
+          <ListboxButton className="inline-flex items-center rounded-r-md bg-indigo-600 p-1 hover:bg-indigo-500 "> 
             <ChevronDownIcon
               className="h-5 w-5 text-white"
               aria-hidden="true"
             />
           </ListboxButton>
         </div>
-        <ListboxOptions className="absolute right-0 mt-3 w-72 divide-y divide-gray-300 overflow-hidden rounded-md bg-white shadow-lg ring-0 focus:ring-0 focus:outline-none">
+        <ListboxOptions className="absolute right-0 mt-3 w-72 divide-y divide-gray-300 overflow-hidden rounded-md bg-white shadow-lg ring-0 focus:ring-0 focus:outline-none ">
           {options.map((option) => (
             <ListboxOption
               key={option.title}
               value={option}
-              className="group cursor-default select-none p-4 text-sm text-black hover:bg-indigo-600 hover:text-white"
+              className="group cursor-default select-none p-4 text-sm text-black hover:bg-indigo-500 hover:text-white"
             >
               <div className="flex items-center justify-between">
                 <span>{option.title}</span>

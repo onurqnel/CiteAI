@@ -2,7 +2,8 @@ const Button = () => {
   return (
     <button
       type="submit"
-      className="rounded-md bg-gray-900 px-2 py-1.5 text-lg font-medium text-white hover:bg-indigo-600">
+      className="rounded-md bg-indigo-600 px-3 text-sm font-semibold text-white  hover:bg-indigo-500"
+    >
       Submit
     </button>
   );

@@ -44,7 +44,7 @@ const Faq = () => {
                 className="py-12 first:pt-0 last:pb-0"
               >
                 <dt>
-                  <DisclosureButton className="group flex w-full items-start justify-between text-left text-gray-900">
+                  <DisclosureButton className="group flex w-full items-start justify-between text-left text-gray-800">
                     <span className="text-xl font-semibold leading-7">
                       {faq.question}
                     </span>
