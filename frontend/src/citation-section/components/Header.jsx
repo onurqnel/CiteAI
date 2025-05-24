@@ -1,7 +1,9 @@
 const Header = () => {
   return (
     <div className="mx-auto max-w-2xl text-center">
-      <h1 className="mb-6 text-[4.5rem] text-black">CiteAI</h1>
+      <p className="text-center mt-2 text-5xl font-medium tracking-tight text-balance text-black ">
+        Generate
+      </p>
     </div>
   );
 };
