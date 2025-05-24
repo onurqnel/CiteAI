@@ -55,7 +55,7 @@ const Features = () => {
             {Icon && (
               <Icon
                 aria-hidden="true"
-                className="absolute top-0.5 left-2 h-5 w-5 text-indigo-600"
+                className="absolute top-0.5 left-2 h-5 w-5 text-black"
               />
             )}
             <dt className="font-semibold text-gray-700">{name}</dt>

@@ -5,7 +5,6 @@ import Faq from "./components/Faq";
 import Navbar from "./components/Navbar";
 import Background from "./components/Background";
 import Cite from "./citation-section/Cite"
-import Pricing from "./components/Pricing";
 import Contact from "./components/Contact";
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
               <Navbar />
               <Background />
               <Hero />
-              <Pricing />
               <Faq />
               <Contact />
               <Footer />
