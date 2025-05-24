@@ -16,9 +16,6 @@ const Button = () => {
       >
         Get started
       </button>
-      <a href="#" className="text-sm font-semibold text-gray-900">
-        Learn more <span aria-hidden="true">→</span>
-      </a>
     </div>
   );
 };
