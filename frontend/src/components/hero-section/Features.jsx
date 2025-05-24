@@ -1,5 +1,5 @@
 import {
-  PaintBrushIcon, // note the **Icon** suffix
+  PaintBrushIcon,
   LinkIcon,
   CheckIcon,
   DocumentTextIcon,
@@ -18,13 +18,12 @@ const Features = () => {
     {
       name: "URL & DOI",
       description:
-      "Paste a URL or DOI and citeAI automatically retrieves complete citation",
+        "Paste a URL or DOI and citeAI automatically retrieves complete citation",
       icon: LinkIcon,
     },
     {
       name: "Validation",
-      description:
-        "CiteAI flags missing fields and suggests corrections.",
+      description: "CiteAI flags missing fields and suggests corrections.",
       icon: CheckIcon,
     },
     {
@@ -41,8 +40,7 @@ const Features = () => {
     },
     {
       name: "Privacy",
-      description:
-        "Citations or the source are not stored on our servers.",
+      description: "Citations or the source are not stored on our servers.",
       icon: EyeSlashIcon,
     },
   ];

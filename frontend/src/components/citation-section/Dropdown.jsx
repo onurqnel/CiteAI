@@ -10,7 +10,6 @@ import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
 const Dropdown = ({ options, selected, onChange }) => (
   <Listbox value={selected} onChange={onChange}>
     <div className="relative inline-block text-left">
-      {/* trigger */}
       <div className="inline-flex divide-x overflow-hidden rounded-md">
         <div className="inline-flex items-center bg-black px-3 py-1.5 text-white rounded-l-md">
           <span className="text-sm font-semibold">{selected.title}</span>
@@ -20,7 +19,6 @@ const Dropdown = ({ options, selected, onChange }) => (
         </ListboxButton>
       </div>
 
-      {/* options */}
       <ListboxOptions
         className="
           absolute right-0 mt-2 w-72 max-h-40 overflow-y-auto
@@ -32,28 +30,25 @@ const Dropdown = ({ options, selected, onChange }) => (
           <ListboxOption
             key={option.title}
             value={option}
-            /* ① make the option a group */
             className={({ active }) =>
               `group cursor-default select-none px-4 py-2 text-sm
                ${active ? "bg-indigo-500 text-white" : "text-gray-900"}`
             }
           >
-            {/* ② title row */}
             <div className="flex items-center justify-between">
               <span>{option.title}</span>
               {option.title === selected.title && (
-                /* icon goes white when row is active */
                 <CheckIcon
                   className={`h-5 w-5 ${
-                    /* show correctly on hover as well */
-                    option.title === selected.title ? "group-hover:text-white text-indigo-600" : ""
+                    option.title === selected.title
+                      ? "group-hover:text-white text-indigo-600"
+                      : ""
                   }`}
                   aria-hidden="true"
                 />
               )}
             </div>
 
-            {/* ③ description picks up hover/active styles */}
             <p className="mt-1 text-xs text-gray-500 group-hover:text-white">
               {option.description}
             </p>

@@ -1,4 +1,4 @@
-import { ClipboardIcon } from "@heroicons/react/24/outline"; 
+import { ClipboardIcon } from "@heroicons/react/24/outline";
 
 const HistoryList = ({ history, onCopy }) => {
   return (
@@ -23,7 +23,10 @@ const HistoryList = ({ history, onCopy }) => {
               className="rounded-full p-2 transition-colors hover:bg-gray-100 focus:outline-none"
               title={`Copy ${item.name}`}
             >
-              <ClipboardIcon className="h-5 w-5 text-gray-600 hover:text-indigo-600" aria-hidden="true" />
+              <ClipboardIcon
+                className="h-5 w-5 text-gray-600 hover:text-indigo-600"
+                aria-hidden="true"
+              />
               <span className="sr-only">Copy {item.name}</span>
             </button>
           </li>
