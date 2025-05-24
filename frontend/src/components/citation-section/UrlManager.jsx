@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Dropdown from "./Dropdown";
 import UrlInput from "./Input";
-import HistoryList from "./HistoryList";
-import Button from "./SubmitButton";
+import HistoryList from "./History";
+import Button from "./Submit";
 
 const publishingOptions = [
   {
