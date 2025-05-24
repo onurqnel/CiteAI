@@ -3,10 +3,10 @@ import { CheckIcon } from "@heroicons/react/20/solid";
 const Pricing = () => {
   const tiers = [
     {
-      name: "Personal",
+      name: "Monthly",
       id: "tier-personal",
       href: "#",
-      priceMonthly: "$29",
+      priceMonthly: "$1",
       description:
         "The perfect plan if you're just getting started with our product.",
       features: [
@@ -20,10 +20,10 @@ const Pricing = () => {
       featured: true,
     },
     {
-      name: "Team",
+      name: "Yearly",
       id: "tier-team",
       href: "#",
-      priceMonthly: "$99",
+      priceMonthly: "$10",
       description: "A plan that scales with your rapidly growing business.",
       features: [
         "Priority support",

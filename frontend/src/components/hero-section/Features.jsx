@@ -1,5 +1,5 @@
 import {
-  PaintBrushIcon,          // note the **Icon** suffix
+  PaintBrushIcon, // note the **Icon** suffix
   LinkIcon,
   CheckIcon,
   DocumentTextIcon,
@@ -10,39 +10,39 @@ import {
 const Features = () => {
   const features = [
     {
-      name: "Style Formatting",
+      name: "Citation Style",
       description:
-        "Generate citations instantly in APA, MLA, Chicago, IEEE, or any custom style with a single toggle.",
+        "Switch between APA, MLA, Chicago or any custom style with a single toggle.",
       icon: PaintBrushIcon,
     },
     {
-      name: "URL & DOI Scraping",
+      name: "URL & DOI",
       description:
-        "Paste a link or DOI and citeAI retrieves author, title, publisher, and date details automatically.",
+      "Paste a URL or DOI and citeAI automatically retrieves complete citation",
       icon: LinkIcon,
     },
     {
-      name: "OpenAI Validation",
+      name: "Validation",
       description:
-        "The model flags missing fields, normalises capitalisation, and suggests corrections before export.",
+        "CiteAI flags missing fields and suggests corrections.",
       icon: CheckIcon,
     },
     {
-      name: "Batch Processing",
+      name: "Search",
       description:
-        "Upload multiple links or PDFs and receive a deduplicated bibliography in seconds.",
+        "Automatically searches related links to fill in any missing details.",
       icon: ClipboardDocumentListIcon,
     },
     {
-      name: "Export Options",
+      name: "Multiple Links",
       description:
-        "Copy to clipboard, download BibTeX, or push entries directly to reference managers such as Zotero or EndNote.",
+        "Upload multiple sources, generate individual bibliographies",
       icon: DocumentTextIcon,
     },
     {
       name: "Privacy",
       description:
-        "All processing is performed in memory; no citations or source texts are persisted on the server.",
+        "Citations or the source are not stored on our servers.",
       icon: EyeSlashIcon,
     },
   ];
@@ -51,11 +51,11 @@ const Features = () => {
     <div className="mx-auto mt-16 max-w-6xl px-6 sm:mt-20 md:mt-24 lg:px-8">
       <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base text-gray-600 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
         {features.map(({ name, description, icon: Icon }) => (
-          <div key={name} className="relative pl-9 space-y-1.5 text-justify">
+          <div key={name} className="relative pl-9 space-y-1.5">
             {Icon && (
               <Icon
                 aria-hidden="true"
-                className="absolute top-0.5 left-2 h-5 w-5 text-black"
+                className="absolute top-0.5 left-2 h-5 w-5 text-indigo-600"
               />
             )}
             <dt className="font-semibold text-gray-700">{name}</dt>
