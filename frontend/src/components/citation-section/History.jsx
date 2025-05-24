@@ -1,11 +1,10 @@
-
 import { ClipboardIcon } from "@heroicons/react/24/outline"; 
 
 const HistoryList = ({ history, onCopy }) => {
   return (
-    <div className="mt-10">
+    <div className="mt-10 mb-60">
       <h3 className="text-md font-semibold text-black">References</h3>
-      <ul className="mt-4 divide-y divide-gray-200 border-y border-gray-200">
+      <ul className="mt-4 divide-y divide-gray-200">
         {history.map((item) => (
           <li key={item.id} className="flex items-center justify-between py-4">
             <div className="flex items-center space-x-3 min-w-0">

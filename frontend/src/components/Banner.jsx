@@ -25,7 +25,7 @@ const Banner = () => {
           className="aspect-577/310 w-144.25 bg-linear-to-r from-[#ff80b5] to-[#9089fc] opacity-30"
         />
       </div>
-      <div className="flex flex-wrap items-center gap-x-4">
+      <div className="flex flex-wrap items-center gap-x-2">
         <p className="text-sm/6 text-gray-900">
           <strong className="font-semibold"> &copy; 2025 Onur Onel</strong>
           <svg
@@ -35,8 +35,15 @@ const Banner = () => {
           >
             <circle r={1} cx={1} cy={1} />
           </svg>
-          Source code available on GitHub
+          Access the Source Code on GitHub
         </p>
+        <svg
+          viewBox="0 0 2 2"
+          aria-hidden="true"
+          className="inline size-0.5 fill-current"
+        >
+          <circle r={1} cx={1} cy={1} />
+        </svg>
         <a
           href="https://github.com/onurqnel/CiteAI"
           className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-xs hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
