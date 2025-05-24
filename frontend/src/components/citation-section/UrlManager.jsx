@@ -34,11 +34,19 @@ const publishingOptions = [
 
 const UrlManager = () => {
   const [history, setHistory] = useState([]);
-
   const [value, setValue] = useState("");
   const [error, setError] = useState(false);
   const [customErrorMsg, setCustomErrorMsg] = useState("");
   const [selected, setSelected] = useState(publishingOptions[0]);
+  const [, setLoading] = useState(false);
+
+  const styleMap = {
+    APA: "APA7",
+    MLA: "MLA",
+    Chicago: "Chicago",
+    IEEE: "IEEE",
+    Harvard: "Harvard",
+  };
 
   const handleChange = (e) => {
     setValue(e.target.value);
@@ -48,23 +56,62 @@ const UrlManager = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const trimmed = value.trim();
+
     if (!trimmed) {
       setError(true);
       setCustomErrorMsg("URL can not be empty!");
       return;
     }
+
+    const urlNormalized = trimmed.includes("://") ? trimmed : `https://${trimmed}`;
+    const id = Date.now();
+
     setHistory((prev) => [
       ...prev,
       {
-        id: prev.length + 1,
+        id,
         name: trimmed,
         avatar: selected.avatar,
-        url: trimmed.includes("://") ? trimmed : `https://${trimmed}`,
+        url: urlNormalized,
+        style: selected.title,
+        citation: null,
       },
     ]);
+
+    setLoading(true);
+
+    try {
+      const res = await fetch('/api/cite', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url: urlNormalized, style: styleMap[selected.title] }),
+      });
+
+      if (!res.ok) {
+        throw new Error(`Request failed with status ${res.status}`);
+      }
+
+      const { citation } = await res.json();
+
+      setHistory((prev) =>
+        prev.map((item) => (item.id === id ? { ...item, citation } : item))
+      );
+    } catch (err) {
+      console.error(err);
+      setHistory((prev) =>
+        prev.map((item) =>
+          item.id === id
+            ? { ...item, citation: "❌ Could not generate citation." }
+            : item
+        )
+      );
+    } finally {
+      setLoading(false);
+    }
+
     setValue("");
     setError(false);
     setCustomErrorMsg("");
