@@ -8,7 +8,6 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    # Allow requests from both React dev server (3000), Vite dev server (5173) and any other localhost port.
     allow_origins=[
         "http://localhost:3000",
         "http://localhost:5173",
@@ -24,7 +23,6 @@ class CiteRequest(BaseModel):
     url: str
     style: str = "APA7"
 
-# Response model ensures OpenAPI schema shows the real structure ({"citation": "..."})
 class CiteResponse(BaseModel):
     citation: str
 

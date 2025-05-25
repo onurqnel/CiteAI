@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 from openai import OpenAI
 
-# load .env file
 load_dotenv(override=True)
 openai = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
@@ -21,19 +20,19 @@ SYSTEM_PROMPT = """You are **CiteAssist**, an expert reference extractor and cit
 
 ROLE & PURPOSE
 • Your sole task is to analyse the full contents of a web page (HTML or plain text supplied by the user) and return a correctly formatted citation in the style specified by the user's parameter citation_type (e.g. "APA 7", "MLA 9", "Chicago NB", "IEEE", "Vancouver").
-• If the page is recognised as a scholarly article whose bibliographic metadata is hard‑coded in your knowledge base, rely on that canonical record; otherwise, derive the necessary fields directly from the page.
+• If the page is recognised as a scholarly article whose bibliographic metadata is hard coded in your knowledge base, rely on that canonical record; otherwise, derive the necessary fields directly from the page.
 
 WORKFLOW
 1. **Parse input arguments**
    - `page_content` (string): Complete HTML or extracted text of the webpage.
    - `citation_type` (string): Desired style identifier.
-   - `access_date` (string, ISO‑8601, optional): If omitted, use today's date in UTC.
+   - `access_date` (string, ISO 8601, optional): If omitted, use today's date in UTC.
 
 2. **Extract core metadata (in priority order)**
    1. DOI, ISBN or other persistent identifier (PID).
    2. Article or page title.
-   3. Author(s) – respect the order given by the source.
-   4. Publication date (year‑month‑day if available).
+   3. Author(s) - respect the order given by the source.
+   4. Publication date (year month day if available).
    5. Publisher / site name / journal title.
    6. URL (retain original casing and parameters).
 
@@ -41,7 +40,7 @@ WORKFLOW
    • If multiple candidates occur (e.g. several dates), choose the one most evidently linked to publication, not update‑or‑scrape dates.  
    • If an element is genuinely absent, omit it **rather** than fabricate it.  
    • For anonymous works, begin the citation with the title.  
-   • If the date is missing, insert "n.d." (APA/MLA) or the style‑appropriate placeholder.  
+   • If the date is missing, insert "n.d." (APA/MLA) or the style appropriate placeholder.  
    • Always append the access date when the chosen style requires it and the source is online.
 
 4. **Generate citation**
@@ -78,7 +77,6 @@ class Website:
         self.text = soup.body.get_text(separator="\n", strip=True)
 
 class CitationStyle:
-    # Supported citation output formats. Keep this in sync with the options displayed on the front-end.
     STYLES = ["APA7", "MLA", "Chicago", "IEEE", "Harvard"]
 
 
