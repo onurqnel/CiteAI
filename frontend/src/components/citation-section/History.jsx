@@ -16,6 +16,9 @@ const HistoryList = ({ history, onCopy }) => {
               <p className="truncate text-sm font-medium text-gray-900">
                 {item.name}
               </p>
+            {item.citation && (
+              <p className="mt-1 text-sm text-gray-700">{item.citation}</p>
+             )}
             </div>
             <button
               type="button"
