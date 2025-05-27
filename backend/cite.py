@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import os
 import json
-import sys
 import httpx
 from datetime import date
 from bs4 import BeautifulSoup
@@ -127,7 +126,7 @@ def generate_citation(url: str, style: str = "APA7") -> str:
 
     openai = OpenAI()  
     completion = openai.chat.completions.create(
-        model="o3-latest",
+        model="gpt-3.5-turbo",
         temperature=0,
         messages=build_messages(site, style_code),
     )

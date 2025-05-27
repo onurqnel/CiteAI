@@ -30,19 +30,28 @@ class CiteResponse(BaseModel):
     citation: str
 
 
-@app.post("/api/cite", response_model=CiteResponse)         
+@app.post("/cite", response_model=CiteResponse)         
 async def cite_endpoint(payload: CiteRequest) -> CiteResponse:
     try:
+        print(f"Processing citation request for URL: {payload.url} with style: {payload.style}")
         citation = await to_thread.run_sync(
             generate_citation,
             str(payload.url),
             payload.style,
         )
     except ValueError as ve:                    
+        print(f"ValueError occurred: {str(ve)}")
         raise HTTPException(status_code=400, detail=str(ve))
     except openai.OpenAIError as oe:      
+        print(f"OpenAI error occurred: {str(oe)}")
         raise HTTPException(
             status_code=502,
             detail=f"Upstream OpenAI error: {oe}",
+        )
+    except Exception as e:
+        print(f"Unexpected error occurred: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Internal server error: {str(e)}",
         )
     return CiteResponse(citation=citation)
