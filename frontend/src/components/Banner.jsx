@@ -1,6 +1,6 @@
 const Banner = () => {
   return (
-    <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+    <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2 sm:px-3.5 sm:before:flex-1">
       <div
         aria-hidden="true"
         className="absolute top-1/2 left-[max(-7rem,calc(50%-52rem))] -z-10 -translate-y-1/2 transform-gpu blur-2xl"
@@ -35,7 +35,7 @@ const Banner = () => {
           >
             <circle r={1} cx={1} cy={1} />
           </svg>
-          Access the Source Code on GitHub
+          CiteAI is Open Soource!
         </p>
         <svg
           viewBox="0 0 2 2"
