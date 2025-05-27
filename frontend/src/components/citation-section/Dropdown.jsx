@@ -32,7 +32,7 @@ const Dropdown = ({ options, selected, onChange }) => (
             className={({ active }) =>
               `group cursor-default select-none px-4 py-2 text-sm
                ${active ? "bg-indigo-500 text-white" : "text-gray-900"}`
-            }
+            } 
           >
             <div className="flex items-center justify-between">
               <span>{option.title}</span>
@@ -47,8 +47,7 @@ const Dropdown = ({ options, selected, onChange }) => (
                 />
               )}
             </div>
-
-            <p className="mt-1 text-xs text-gray-500 group-hover:text-white">
+            <p className="mt-1 text-xs group-hover:text-white">
               {option.description}
             </p>
           </ListboxOption>
