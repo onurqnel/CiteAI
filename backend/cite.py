@@ -1,14 +1,14 @@
 from __future__ import annotations
 
-import os
 import json
-from typing import TypedDict, Any
+import os
 import httpx
+
 from datetime import date
+from typing import Any
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 from openai import OpenAI
-
 
 load_dotenv(override=True)
 openai = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -105,7 +105,8 @@ class CitationStyle:
     def normalise(raw: str) -> str:
         return raw.strip().upper().replace(" ", "")
 
-def build_messages(site: Website, style: str) -> list[dict]:
+
+def build_messages(site: Website, style: str) -> list[dict[str, str]]:
     today = date.today().isoformat()
     return [
         {"role": "system", "content": SYSTEM_PROMPT},
@@ -118,41 +119,23 @@ def build_messages(site: Website, style: str) -> list[dict]:
             ),
         },
     ]
-class CitationResult(TypedDict):
-    citation: str
-    title: str
 
-
-def generate_citation(url: str, style: str = "APA7") -> CitationResult:
-    """
-    Fetch the page at *url*, ask OpenAI to format a reference in *style*,
-    and return both the citation string and the best‑guess article/page title.
-    """
-    style_code = CitationStyle.normalise(style)
-    if style_code not in CitationStyle.VALID:
+def generate_citation(url: str, style: str = "APA7") -> str:
+    style = CitationStyle.normalise(style)
+    if style not in CitationStyle.VALID:
         raise ValueError(f"Unsupported style: {style}")
 
     site = Website(url)
 
-    client = OpenAI()                   
-    completion = client.chat.completions.create(
+    completion = openai.chat.completions.create(
         model="gpt-3.5-turbo",
-        temperature=0,
-        messages=build_messages(site, style_code),
+        messages=build_messages(site, style),
     )
 
     raw_response = completion.choices[0].message.content.strip()
-
     try:
         data: dict[str, Any] = json.loads(raw_response)
-        citation = data["citation"]
-        title = (
-            data.get("metadata_used", {}).get("title") 
-            or site.title
-        )
+        return data["citation"]
     except (json.JSONDecodeError, KeyError, TypeError):
-        citation = raw_response
-        title = site.title
-
-    return {"citation": citation, "title": title}
+        return raw_response
 

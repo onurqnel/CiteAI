@@ -66,7 +66,9 @@ const UrlManager = () => {
       return;
     }
 
-    const urlNormalized = trimmed.includes("://") ? trimmed : `https://${trimmed}`;
+    const urlNormalized = trimmed.includes("://")
+      ? trimmed
+      : `https://${trimmed}`;
     const id = Date.now();
 
     setHistory((prev) => [
@@ -84,10 +86,13 @@ const UrlManager = () => {
     setLoading(true);
 
     try {
-      const res = await fetch('/api/cite', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url: urlNormalized, style: styleMap[selected.title] }),
+      const res = await fetch("/api/cite", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          url: urlNormalized,
+          style: styleMap[selected.title],
+        }),
       });
 
       if (!res.ok) {
@@ -117,10 +122,11 @@ const UrlManager = () => {
     setCustomErrorMsg("");
   };
 
-  const handleCopy = (url) => {
-    setValue(url);
-    setError(false);
-    setCustomErrorMsg("");
+  const handleCopy = (text) => {
+    if (!text) return;
+    navigator.clipboard
+      .writeText(text)
+      .catch((err) => console.error("Clipboard write failed:", err));
   };
 
   return (
