@@ -1,11 +1,9 @@
-from __future__ import annotations
 import os
-from datetime import date
-import ipaddress
-import pathlib
-import re
+import json
 import sys
 import httpx
+from datetime import date
+from __future__ import annotations
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 from openai import OpenAI
@@ -119,19 +117,27 @@ def build_messages(site: Website, style: str) -> list[dict]:
             ),
         },
     ]
-
 def generate_citation(url: str, style: str = "APA7") -> str:
+
     style_code = CitationStyle.normalise(style)
     if style_code not in CitationStyle.VALID:
         raise ValueError(f"Unsupported style: {style}")
 
     site = Website(url)
+
     completion = openai.chat.completions.create(
         model="o3-latest",
         temperature=0,
         messages=build_messages(site, style_code),
     )
-    return completion.choices[0].message.content.strip()
+
+    raw = completion.choices[0].message.content.strip()
+
+    try:
+        data = json.loads(raw)
+        return data["citation"]
+    except (json.JSONDecodeError, KeyError, TypeError):
+        return raw
 
 if __name__ == "__main__":
     import argparse
