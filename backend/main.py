@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, HttpUrl
 from anyio import to_thread
 import openai                             
-from cite import generate_citation, CitationStyle 
+from cite import generate_citation
 
 app = FastAPI()
 
