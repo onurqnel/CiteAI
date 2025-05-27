@@ -3,8 +3,8 @@ import Marquee from "react-fast-marquee";
 const Logo = () => {
   return (
     <div className="mt-24">
-      <div className="mx-auto max-w-5xl">
-        <Marquee gradient={false} speed={40} className="mt-16 flex">
+      <div className="mx-auto max-w-4xl">
+        <Marquee gradient={false} speed={40} className="mt-10 flex">
           <img src="/apa.png" alt="APA" className="h-20 w-auto mx-18" />
           <img src="/mla.png" alt="MLA" className="h-20 w-auto mx-18" />
           <img src="/ieee.png" alt="IEEE" className="h-20 w-auto mx-18" />
