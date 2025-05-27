@@ -1,9 +1,15 @@
+from __future__ import annotations
 import os
-import httpx
-from dotenv import load_dotenv
-from bs4 import BeautifulSoup
-from openai import OpenAI
 from datetime import date
+import ipaddress
+import pathlib
+import re
+import sys
+import httpx
+from bs4 import BeautifulSoup
+from dotenv import load_dotenv
+from openai import OpenAI
+
 
 load_dotenv(override=True)
 openai = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -94,7 +100,11 @@ class Website:
         self.text = (body or soup).get_text(separator="\n", strip=True)[:12_000]
 
 class CitationStyle:
-    VALID = {"APA7", "MLA", "Chicago", "IEEE", "Harvard"}
+    VALID = {"APA7", "MLA", "CHICAGO", "IEEE", "HARVARD"}
+
+    @staticmethod
+    def normalise(raw: str) -> str:
+        return raw.strip().upper().replace(" ", "")
 
 def build_messages(site: Website, style: str) -> list[dict]:
     today = date.today().isoformat()
@@ -110,17 +120,31 @@ def build_messages(site: Website, style: str) -> list[dict]:
         },
     ]
 
-def cite(url: str, style: str = "APA7") -> str:
-    style = style.strip()
-    if style not in CitationStyle.VALID:
+def generate_citation(url: str, style: str = "APA7") -> str:
+    style_code = CitationStyle.normalise(style)
+    if style_code not in CitationStyle.VALID:
         raise ValueError(f"Unsupported style: {style}")
 
     site = Website(url)
-
     completion = openai.chat.completions.create(
         model="o3-latest",
         temperature=0,
-        messages=build_messages(site, style),
+        messages=build_messages(site, style_code),
     )
-    
     return completion.choices[0].message.content.strip()
+
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Generate a citation for a URL.")
+    parser.add_argument("url", help="HTTP/HTTPS resource to cite")
+    parser.add_argument(
+        "--style", default="APA7", help="Citation style (APA7, MLA, ...)"
+    )
+    args = parser.parse_args()
+
+    try:
+        print(generate_citation(args.url, args.style))
+    except Exception as exc:  
+        print(f"Error: {exc}", file=sys.stderr)
+        sys.exit(1)
