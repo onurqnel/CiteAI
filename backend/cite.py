@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import os
 import json
+from typing import TypedDict, Any
 import httpx
 from datetime import date
 from bs4 import BeautifulSoup
@@ -117,15 +118,24 @@ def build_messages(site: Website, style: str) -> list[dict]:
             ),
         },
     ]
-def generate_citation(url: str, style: str = "APA7") -> str:
+class CitationResult(TypedDict):
+    citation: str
+    title: str
+
+
+def generate_citation(url: str, style: str = "APA7") -> CitationResult:
+    """
+    Fetch the page at *url*, ask OpenAI to format a reference in *style*,
+    and return both the citation string and the best‑guess article/page title.
+    """
     style_code = CitationStyle.normalise(style)
     if style_code not in CitationStyle.VALID:
         raise ValueError(f"Unsupported style: {style}")
 
     site = Website(url)
 
-    openai = OpenAI()  
-    completion = openai.chat.completions.create(
+    client = OpenAI()                   
+    completion = client.chat.completions.create(
         model="gpt-3.5-turbo",
         temperature=0,
         messages=build_messages(site, style_code),
@@ -134,8 +144,15 @@ def generate_citation(url: str, style: str = "APA7") -> str:
     raw_response = completion.choices[0].message.content.strip()
 
     try:
-        data = json.loads(raw_response)
-        return data["citation"]
+        data: dict[str, Any] = json.loads(raw_response)
+        citation = data["citation"]
+        title = (
+            data.get("metadata_used", {}).get("title") 
+            or site.title
+        )
     except (json.JSONDecodeError, KeyError, TypeError):
-        return raw_response
+        citation = raw_response
+        title = site.title
+
+    return {"citation": citation, "title": title}
 

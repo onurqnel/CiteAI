@@ -4,7 +4,8 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, HttpUrl
 from anyio import to_thread
-import openai                             
+import openai
+
 from cite import generate_citation
 
 app = FastAPI()
@@ -28,30 +29,41 @@ class CiteRequest(BaseModel):
 
 class CiteResponse(BaseModel):
     citation: str
+    title: str
 
-
-@app.post("/cite", response_model=CiteResponse)         
+@app.post("/cite", response_model=CiteResponse)
 async def cite_endpoint(payload: CiteRequest) -> CiteResponse:
+    """
+    Generate a formatted citation (and page title) for the given URL.
+    """
     try:
-        print(f"Processing citation request for URL: {payload.url} with style: {payload.style}")
-        citation = await to_thread.run_sync(
+        print(
+            f"Processing citation request for URL: {payload.url} "
+            f"with style: {payload.style}"
+        )
+
+        result = await to_thread.run_sync(
             generate_citation,
             str(payload.url),
             payload.style,
         )
-    except ValueError as ve:                    
-        print(f"ValueError occurred: {str(ve)}")
+
+    except ValueError as ve:
+        print(f"ValueError occurred: {ve}")
         raise HTTPException(status_code=400, detail=str(ve))
-    except openai.OpenAIError as oe:      
-        print(f"OpenAI error occurred: {str(oe)}")
+
+    except openai.OpenAIError as oe:
+        print(f"OpenAI error occurred: {oe}")
         raise HTTPException(
             status_code=502,
             detail=f"Upstream OpenAI error: {oe}",
         )
+
     except Exception as e:
-        print(f"Unexpected error occurred: {str(e)}")
+        print(f"Unexpected error occurred: {e}")
         raise HTTPException(
             status_code=500,
-            detail=f"Internal server error: {str(e)}",
+            detail=f"Internal server error: {e}",
         )
-    return CiteResponse(citation=citation)
+
+    return CiteResponse(**result)
